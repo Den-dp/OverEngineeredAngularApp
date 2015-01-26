@@ -1,0 +1,17 @@
+{
+  "name": "OverEngineeredAngularApp",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Den-dp/OverEngineeredAngularApp",
+  "authors": [
+    "Den_dp <Denis.Bendrikov@gmail.com>"
+  ],
+  "description": "The most over-engineered angular app ever",
+  "license": "GPL-2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
