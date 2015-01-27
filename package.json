@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/Den-dp/OverEngineeredAngularApp/issues"
   },
-  "homepage": "https://github.com/Den-dp/OverEngineeredAngularApp"
+  "homepage": "https://github.com/Den-dp/OverEngineeredAngularApp",
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-mocha": "^0.1.10",
+    "mocha": "^2.1.0"
+  }
 }
