@@ -1,5 +1,4 @@
 'use strict';
-var assert = chai.assert;
 
 describe('dummy test', function () {
     it('should test smthnk', function () {
