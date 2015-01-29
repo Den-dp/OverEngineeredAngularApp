@@ -2,7 +2,7 @@
 // Generated on Wed Jan 28 2015 00:26:48 GMT+0200 (Финляндия (зима))
 
 module.exports = function (config) {
-    config.set({
+    var configuration = {
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
         basePath: '',
@@ -47,7 +47,7 @@ module.exports = function (config) {
 
         // level of logging
         // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-        logLevel: config.LOG_DEBUG,
+        logLevel: config.LOG_INFO,
 
 
         // enable / disable watching file and executing tests whenever any file changes
@@ -56,11 +56,30 @@ module.exports = function (config) {
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+        // browsers: ['Chrome', 'Safari', 'Firefox'],
         browsers: ['ChromeCanary'],
+
+        customLaunchers: {
+            Chrome_travis_ci: {
+                base: 'Chrome',
+                flags: ['--no-sandbox']
+            }
+        },
 
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
         singleRun: false
-    });
+    };
+
+    if(process.env.TRAVIS){
+        configuration.browsers = ['Chrome_travis_ci'];
+        // configuration.reporters = configuration.reporters.concat(['coverage', 'coveralls']);
+        // configuration.coverageReporter = {
+        //   type : 'lcovonly',
+        //   dir : 'coverage/'
+        // };
+    }
+
+    config.set(configuration);
 };
